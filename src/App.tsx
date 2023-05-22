@@ -1,8 +1,14 @@
+import { Route, Routes } from "react-router-dom"
+import Login from "./pages/Login"
+import NotFound from "./pages/NotFound"
 
 function App() {
 
   return (
-    <div>Hello World!</div>
+    <Routes>
+      <Route path="/" element={ <Login /> }/>
+      <Route path="*" element={ <NotFound /> } />
+    </Routes>
   )
 }
 
