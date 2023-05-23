@@ -4,8 +4,12 @@ import ICountry from '../interfaces/ICountry';
 import { useNavigate } from 'react-router-dom'
 
 function CountryAndSeasonForm() {
-  const { data: countries, isLoading, errorMessage } = useFetch<ICountry[]>('https://v3.football.api-sports.io/countries')
-  const { data: seasons, isLoading: loading, errorMessage: err } = useFetch<number[]>('https://v3.football.api-sports.io/leagues/seasons')
+
+  const COUNTRY_URL = 'https://v3.football.api-sports.io/countries'
+  const SEASON_URL = 'https://v3.football.api-sports.io/leagues/seasons'
+
+  const { data: countries, isLoading, errorMessage } = useFetch<ICountry[]>(COUNTRY_URL)
+  const { data: seasons, isLoading: loading, errorMessage: err } = useFetch<number[]>(SEASON_URL)
 
   const [country, setCountry] = useState('');
   const [season, setSeason] = useState('');
@@ -22,6 +26,7 @@ function CountryAndSeasonForm() {
     e.preventDefault();
     if (country && season) navigate(`/${country}/${season}`)
   }
+
   const seasonDisabled = !country
   const buttonDisabled = !country || !season
 
@@ -53,8 +58,8 @@ function CountryAndSeasonForm() {
       autoComplete="off"
       onChange={ handleChange }>
         <option>Select</option>
-        { seasons?.map((year) => {
-          return (<option key={season} value={year}>{year}</option>)
+        { seasons?.map((year, i) => {
+          return (<option key={i} value={year}>{year}</option>)
         }) }
       </select>
       </label>
