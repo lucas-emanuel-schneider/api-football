@@ -3,6 +3,7 @@ import ITeam from '../interfaces/ITeam'
 import useFetch from '../hooks/useFetchWithParams';
 import TeamsCard from '../components/TeamCard';
 // import { teams } from '../components/teamMock';
+import styles from './Teams.module.css'
 
 function Teams() {
   const navigate = useNavigate()
@@ -18,7 +19,7 @@ function Teams() {
 
   const { data: teams, isLoading, errorMessage } = useFetch<ITeam[]>(TEAMS_URL, params)
   return (
-    <div>
+    <div className={styles.teamsContainer}>
       <button onClick={ returnHome }>Home</button>
       {
         teams?.map((card) => {

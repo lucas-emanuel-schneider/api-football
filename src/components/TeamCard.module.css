@@ -1,0 +1,33 @@
+.teamsCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.teamsCard h5 {
+  margin-top: 0;
+}
+
+.teamsCard img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.teamsCard p {
+  margin: 8px 0;
+}
+
+.teamsCard a {
+  text-decoration: none;
+  color: #333;
+}
+
+.teamsCard a:hover {
+  color: #666;
+}

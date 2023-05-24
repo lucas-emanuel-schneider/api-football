@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import PlayerCard from "../components/PlayerCard";
 import useFetch from "../hooks/useFetchWithParams";
 import { IPlayer, ITeamData } from "../interfaces/IPlayer";
+import styles from './Squad.module.css'
 
 function Squad() {
   const PLAYERS_URL = 'https://v3.football.api-sports.io/squads'
@@ -14,7 +15,7 @@ function Squad() {
   const { data: squad, isLoading, errorMessage } = useFetch<ITeamData[]>(PLAYERS_URL, params)
 
   return (
-    <div>{  squad && squad[0].players.map((player: IPlayer) => {
+    <div className={styles.squadContainer}>{  squad && squad[0].players.map((player: IPlayer) => {
       return (<PlayerCard key={player.id} { ...player }/>)
     })}
     { errorMessage && <h5>{ errorMessage }</h5> }

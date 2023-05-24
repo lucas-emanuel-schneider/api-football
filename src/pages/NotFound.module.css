@@ -1,0 +1,14 @@
+.notFoundContainer {
+  text-align: center;
+}
+
+.notFoundContainer p {
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.notFoundContainer link {
+  font-size: 16px;
+  color: blue;
+}
