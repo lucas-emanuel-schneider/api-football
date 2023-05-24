@@ -1,16 +1,4 @@
-export const players ={
-  "get": "players",
-  "parameters": {
-    "league": "397",
-    "season": "2021"
-  },
-  "errors": [],
-  "results": 20,
-  "paging": {
-    "current": 1,
-    "total": 2
-  },
-  "response": [
+export const players = [
     {
       "player": {
         "id": 73817,
@@ -1912,4 +1900,3 @@ export const players ={
         ]
     }
   ]
-}
