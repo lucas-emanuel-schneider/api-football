@@ -1,14 +1,9 @@
-import { Route, Routes } from "react-router-dom"
-import Login from "./pages/Login"
-import NotFound from "./pages/NotFound"
+import { AppRoutes } from "./Routes"
 
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={ <Login /> }/>
-      <Route path="*" element={ <NotFound /> } />
-    </Routes>
+    <AppRoutes />
   )
 }
 
