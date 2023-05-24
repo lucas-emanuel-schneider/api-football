@@ -2,6 +2,7 @@ import LeagueCard from "../components/LeagueCard";
 import useFetch from "../hooks/useFetch"
 import ILeague from "../interfaces/ILeague"
 import { useParams, useNavigate } from 'react-router-dom';
+import styles from './Leagues.module.css'
 
 
 function Leagues() {
@@ -20,7 +21,7 @@ function Leagues() {
   if (resultFiltered && resultFiltered.length === 0) return (<p>League not Found</p>)
 
   return (
-    <div>
+    <div className={styles.leaguesContainer}>
       <button onClick={ returnHome }>Home</button>
       {
         resultFiltered?.map((card) => {

@@ -1,10 +1,11 @@
 import ITeam from "../interfaces/ITeam"
 import { Link } from "react-router-dom"
+import styles from './TeamCard.module.css'
 
 function TeamsCard(props: ITeam) {
   const { team, venue } = props;
   return (
-    <div>
+    <div className={styles.teamsCard}>
       <Link to={`/teams/squads/${team.id}`}>
       <h5>{team.name}</h5>
       <img src={ team.logo } alt={ team.name } />

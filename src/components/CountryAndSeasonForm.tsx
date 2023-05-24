@@ -1,7 +1,8 @@
 import { useState, ChangeEvent, MouseEvent, FormEvent } from 'react'
 import useFetch from '../hooks/useFetch';
 import ICountry from '../interfaces/ICountry';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import styles from  './CountryAndSeasonForm.module.css'
 
 function CountryAndSeasonForm() {
 
@@ -31,7 +32,7 @@ function CountryAndSeasonForm() {
   const buttonDisabled = !country || !season
 
   return (
-    <div>
+    <div className={styles.countryAndSeasonFormContainer}>
     <form onSubmit={ handleSubmit }>
       <label htmlFor="country">Choose Country
       <select

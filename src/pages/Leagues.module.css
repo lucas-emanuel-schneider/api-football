@@ -1,0 +1,20 @@
+.leaguesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.leaguesContainer button {
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.leaguesContainer p {
+  font-size: 16px;
+  margin-bottom: 16px;
+}

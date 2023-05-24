@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, MouseEvent, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
+import styles from './LoginForm.module.css'
 
 function LoginForm() {
   const BASE_URL = 'https://v3.football.api-sports.io/status'
@@ -42,7 +43,7 @@ function LoginForm() {
 
   const disabled = !loginKey || loginKey.length < 10;
   return (
-    <form onSubmit={ handleSubmit }>
+    <form className={styles.loginForm} onSubmit={ handleSubmit }>
       <input
       type="text"
       name="key"
