@@ -1,9 +1,14 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import ITeam from '../interfaces/ITeam'
 import useFetch from '../hooks/useFetchWithParams';
 import TeamsCard from '../components/TeamCard';
+// import { teams } from '../components/teamMock';
 
 function Teams() {
+  const navigate = useNavigate()
+    const returnHome = () => {
+    navigate('/home')
+  }
   const TEAMS_URL = 'https://v3.football.api-sports.io/teams'
     const { id, season } = useParams();
   const params = {
@@ -14,6 +19,7 @@ function Teams() {
   const { data: teams, isLoading, errorMessage } = useFetch<ITeam[]>(TEAMS_URL, params)
   return (
     <div>
+      <button onClick={ returnHome }>Home</button>
       {
         teams?.map((card) => {
           return (
