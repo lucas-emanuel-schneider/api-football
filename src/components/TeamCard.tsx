@@ -25,7 +25,7 @@ function TeamsCard(props: ITeam) {
   console.log('O site me bloqueou e não permite criação de novas contas', props)
   return (
     <div>
-
+      Fui Bloqueado e não tenho acesso a outras Keys: o site não permite.
     </div>
   )
 }
